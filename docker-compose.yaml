@@ -9,7 +9,7 @@ services:
     networks:
       - nop-net
   nopdb:
-    image: mysql:8.0-Debian
+    image: mysql:8.0-debian
     environment:
       - MYSQL_ROOT_PASSWORD=rootroot
       - MYSQL_DATABASE=nop
