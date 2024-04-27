@@ -1,0 +1,25 @@
+---
+version: "3.8"
+services:
+  nopweb:
+    build:
+      context: .
+    ports:
+      - 5000:5000
+    networks:
+      - nop-net
+  nopdb:
+    image: mysql:8.0-Debian
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootroot
+      - MYSQL_DATABASE=nop
+      - MYSQL_USER=dmt
+      - MYSQL_PASSWORD=dmtdmt
+    volumes:
+      - nop-db:/var/lib/mysql
+    networks:
+      - nop-net
+volumes:
+  nop-db:
+networks:
+  nop-net:
